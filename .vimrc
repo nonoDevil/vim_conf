@@ -14,8 +14,8 @@ set number               " 显示行号
 filetype plugin indent on 	" 打开文件类型检测
 set completeopt=longest,menu	" 关掉智能补全时的预览窗口
 set cscopequickfix=s-,c-,d-,i-,t-,e-
-set t_Co=256
-colorscheme molokai		" 设置配色方案
+set t_Co=256             " 设置终端配色为256bit的颜色方案
+colorscheme molokai      " 设置配色方案
 let g:molokai_original=0
 " -- MiniBufferExplorer -- 
 let g:miniBufExplMapWindowNavVim = 1 	" 按下Ctrl+h/j/k/l，可以切换到当前窗口的上下左右窗口
