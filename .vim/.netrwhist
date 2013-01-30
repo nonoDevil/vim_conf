@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/hurley/Program/C/huffman'
+let g:netrw_dirhist_2='/home/hurley/Github/huffman/.git'
+let g:netrw_dirhist_3='/home/hurley/Github/huffman/.git/objects'
+let g:netrw_dirhist_4='/home/hurley/Github/huffman/.git'
+let g:netrw_dirhist_5='/home/hurley/Github/huffman/.git/logs'
+let g:netrw_dirhist_6='/usr/include/c++/4.4'
+let g:netrw_dirhist_7='/home/nonodevil/.vim/c-support/templates'
