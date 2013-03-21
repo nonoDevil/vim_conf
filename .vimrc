@@ -3,9 +3,9 @@ set nocp 		 " 使用不兼容 vi 的模式（vi模式一些操作很不方便）
 set autoindent       	 " 设置自动对齐(缩进)：即每行的缩进值与上一行相等；使用 noautoindent 取消设置
 set smartindent        	 " 智能对齐方式
 set cul			 " 显示当前行下划线
-"set tabstop=4 		 " 设置制表符(tab键)的宽度
-"set softtabstop=4     	 " 设置软制表符的宽度    
-"set shiftwidth=4        " (自动) 缩进使用的4个空格
+set tabstop=4 		 " 设置制表符(tab键)的宽度
+set softtabstop=4     	 " 设置软制表符的宽度    
+set shiftwidth=4        " (自动) 缩进使用的4个空格
 set cindent              " 使用 C/C++ 语言的自动缩进方式
 set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s     " 设置C/C++语言的具体缩进方式
 set backspace=2          " 设置退格键可用
@@ -14,9 +14,9 @@ set number               " 显示行号
 filetype plugin indent on 	" 打开文件类型检测
 set completeopt=longest,menu	" 关掉智能补全时的预览窗口
 set cscopequickfix=s-,c-,d-,i-,t-,e-
-set t_Co=256             " 设置终端配色为256bit的颜色方案
-colorscheme molokai      " 设置配色方案
-let g:molokai_original=0
+set t_Co=256
+colorscheme molokai		" 设置配色方案
+let g:molokai_original=1
 " -- MiniBufferExplorer -- 
 let g:miniBufExplMapWindowNavVim = 1 	" 按下Ctrl+h/j/k/l，可以切换到当前窗口的上下左右窗口
 let g:miniBufExplMapWindowNavArrows = 1 " 按下Ctrl+箭头，可以切换到当前窗口的上下左右窗口
@@ -35,12 +35,12 @@ nmap wm :WMToggle<cr>
 " 虽然这里注释掉了，但是通过修改 echofunc 插件代码在插件内成功实现...^ ^
 " inoremap ( ()<ESC>i
 " inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap { {}<ESC>i
-inoremap } <c-r>=ClosePair('}')<CR>
-inoremap [ []<ESC>i
-inoremap ] <c-r>=ClosePair(']')<CR>
-inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
+"inoremap { {}<ESC>i
+"inoremap } <c-r>=ClosePair('}')<CR>
+"inoremap [ []<ESC>i
+"inoremap ] <c-r>=ClosePair(']')<CR>
+"inoremap " ""<ESC>i
+"inoremap ' ''<ESC>i
 
 " 设置按下.之后启动自动补全功能
 function ClosePair(char)
@@ -70,14 +70,14 @@ imap <F2> <C-n>
 "let OmniCpp_ShowAccess = 1
 
 "" 按下F3根据头文件内关键字补全
-" imap <F3> <C-X><C-I>
+imap <F3> <C-X><C-I>
 
 " 设置超级TAB的补全
 let g:SuperTabRetainCompletionType=2
 let g:SuperTabDefaultCompletionType="<C-n>"
 
 " 自动补全列表的颜色设置
-highlight Pmenu ctermfg=black 
+highlight Pmenu ctermfg=gray
 highlight PmenuSel ctermfg=white ctermbg=black
 
 " clang_complete
@@ -85,9 +85,9 @@ set completeopt=longest,menu
 let g:clang_complete_copen=1
 let g:clang_snippets=1
 let g:clang_close_preview=1
-"let g:clang_periodic_quickfix=1
-"let g:clang_use_library=1
-"let g:clang_user_options='-stdlib=libc++ -std=c++11 -IIncludePath'''
+let g:clang_periodic_quickfix=1
+let g:clang_use_library=1
+let g:clang_user_options='-stdlib=libc++ -std=c++11 -IIncludePath'''
 
 "--ctags setting--
 
@@ -98,10 +98,7 @@ set tags=tags
 set tags+=./tags
 set tags+=/usr/include/tags
 set tags+=/usr/include/c++/tags
-set tags+=/usr/include/Qt/tags
-set tags+=/usr/include/gtk-2.0/tags
-set tags+=/usr/include/gtk-3.0/tags
-
+set tags+=/usr/include/linux/tags
 " -- QuickFix setting --
 
 " 按下F6，执行make编译程序，并打开quickfix窗口，显示编译信息
@@ -115,6 +112,6 @@ map <F9> :make clean<CR><CR><CR>
 
 " 以下的映射是使上面的快捷键在插入模式下也能用
 imap <F6> <ESC>:make clean<CR><CR><CR>
-imap <F7> <ESC>:make<CR><CR><CR> :copen<CR><CR>
+"imap <F7> <ESC>:make<CR><CR><CR> :copen<CR><CR>
 imap <F8> <ESC>:cp<CR>
 imap <F9> <ESC>:cn<CR>
